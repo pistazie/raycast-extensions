@@ -1,0 +1,65 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "circle-ci-workflow-navigator",
+  "title": "CircleCI Workflow navigator",
+  "description": "Navigates a single CircleCI+Github project from a per-workflow navigation perspective",
+  "icon": "circle-logo.png",
+  "author": "pistazie",
+  "contributors": [],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "monorepo-worflows-navigator",
+      "title": "CircleCI monorepo navigator",
+      "description": "Navigates CircleCI workflows from a per-workflow perspective",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "type": "password",
+      "required": true,
+      "title": "Circle CI API token",
+      "description": "Get it on https://app.circleci.com/settings/user/tokens"
+    },
+    {
+      "name": "repoGithubUrl",
+      "type": "textfield",
+      "required": true,
+      "title": "Github Repository URL",
+      "description": "This Github repository",
+      "placeholder": "https://github.com/my-org/my-repo"
+    },
+    {
+      "name": "defaultBranch",
+      "type": "textfield",
+      "required": true,
+      "title": "Default branch",
+      "placeholder": "main",
+      "description": "The default branch to navigate (usually 'main', or 'master')"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.25.0",
+    "@types/lodash": "^4.14.184",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "node-fetch": "^3.0.0",
+    "prettier": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "~16.10.0",
+    "@types/react": "^17.0.28",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "react-devtools": "^4.19.2",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop"
+  }
+}
